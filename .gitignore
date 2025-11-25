@@ -1,0 +1,85 @@
+# Python 缓存文件
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv
+
+# IDE 配置
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# 数据集文件（太大，不上传到 GitHub）
+# 如果需要分享数据集，建议使用 Git LFS 或云存储
+tongyi_weidu/
+tongyi_weidu_5x/
+tongyi_weidu_10x/
+tongyi_weidu_10x_v2/
+merged_complete_dataset_no_augment/
+neural_network_dataset/
+neural_network_dataset_clean/
+unified_augmented_dataset_224x224/
+
+# 实验结果和模型文件（可选择性上传部分）
+experiments/*/best_model.pth
+experiments/*/checkpoint_*.pth
+experiments/*/*.png
+experiments/*/*.json
+experiments/*/gate_history.json
+
+# 但保留实验目录结构和重要结果
+!experiments/lightweight_ccga_v5_balanced_gate/gate_analysis.png
+!experiments/lightweight_ccga_v5_balanced_gate/confusion_matrix.png
+!experiments/lightweight_ccga_v5_balanced_gate/gate_evolution.png
+
+# MATLAB 临时文件
+*.asv
+*.m~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日志文件
+*.log
+
+# 大型模型文件（建议使用 Git LFS）
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pkl
+*.pickle
+
+# 但保留最佳模型（如果需要的话，取消下面的注释）
+# !experiments/lightweight_ccga_v5_balanced_gate/best_model.pth
+
+# 临时文件
+*.tmp
+*.temp
+*.bak
+
+# 数据报告（太大的话可以排除）
+# *.txt
+
+# MATLAB 数据文件（.mat 文件通常很大）
+*.mat
+
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+

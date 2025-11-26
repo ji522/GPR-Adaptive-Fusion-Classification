@@ -29,7 +29,8 @@ class LightweightCCGANet(nn.Module):
         feature_dim=256,
         num_heads=4,
         use_adaptive_gate=True,
-        dropout=0.3
+        dropout=0.3,
+        physical_affinity='symmetric_outer'  # 'repeat' or 'symmetric_outer'
     ):
         """
         Args:
@@ -39,6 +40,7 @@ class LightweightCCGANet(nn.Module):
             num_heads: CCGA注意力头数
             use_adaptive_gate: 是否使用自适应门控
             dropout: Dropout比例
+            physical_affinity: 物理亲和矩阵构造方式 ('repeat' 或 'symmetric_outer')
         """
         super(LightweightCCGANet, self).__init__()
         
@@ -88,7 +90,8 @@ class LightweightCCGANet(nn.Module):
             num_heads=num_heads,
             dropout=dropout,
             use_adaptive_gate=use_adaptive_gate,
-            fusion_mode="gated"
+            fusion_mode="gated",
+            physical_affinity=physical_affinity  # 使用指定的物理亲和矩阵构造方式
         )
         
         # 分类头

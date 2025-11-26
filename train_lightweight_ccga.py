@@ -255,13 +255,15 @@ def train(args):
     
     # 创建模型
     print('\n创建模型...')
+    print('✅ 使用对称外积 (symmetric_outer) 构造物理亲和矩阵')
     model = LightweightCCGANet(
         num_classes=7,
         backbone=args.backbone,
         feature_dim=args.feature_dim,
         num_heads=args.num_heads,
         use_adaptive_gate=True,
-        dropout=args.dropout
+        dropout=args.dropout,
+        physical_affinity='symmetric_outer'  # 使用对称外积
     ).to(device)
     
     # 统计参数
